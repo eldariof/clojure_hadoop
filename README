@@ -1,0 +1,19 @@
+This code is based on the example wordcount5 of the delivery package clojure-hadoop.
+
+Assembly with leiningen:
+    
+    lein deps
+    lein compile
+    lein uberjar
+
+Run in standalone mode:
+    
+    java -cp clojure_hadoop-1.0-SNAPSHOT-standalone.jar clojure_hadoop.job -job wordcount/job -input FILE -output out
+    
+FILE as an argument, replace the text file, and after the program out in the catalog file is created containing a list of N-Gram and their number in the text.
+
+Run in Hadoop cluster:
+    
+    hadoop jar clojure_hadoop-1.0-SNAPSHOT-standalone.jar clojure_hadoop.job -job wordcount/job -input input -output output
+    
+The files should be placed on HDFS
